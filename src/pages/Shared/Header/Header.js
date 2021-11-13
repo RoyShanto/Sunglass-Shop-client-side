@@ -40,9 +40,11 @@ const Header = () => {
                                 }
                             </li>
 
-
                         </ul>
                     </div>
+                    {/* <li className="nav-item text-end">
+                        <p className="nav-link">Welcome {user.displayName}</p>
+                    </li> */}
                 </div>
             </nav><br /><br />
         </div>

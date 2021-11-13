@@ -53,24 +53,26 @@ const Login = () => {
     }
 
     return (
-        <div className="login-form my-5 pt-5 container">
-            <center>
-                <div className="border border-3 border-info p-3 pb-5 w-25">
+        <div className="my-5 pt-5 container">
+
+            <div className="d-flex justify-content-center align-items-center">
+                <div className=" p-5 border border-3 border-info">
                     <h2 className="fw-bold">Please {!isLogin ? 'Login' : 'Register'}</h2>
                     <form onSubmit={handleRegistration}>
-                        {isLogin && <div><input type="text" name="name" placeholder="Enter Your Name" onBlur={handleNameChange} required /><br /></div>}
-                        <input className="mb-2" type="email" name="email" placeholder="Enter Your Email" onBlur={handleEmailChange} required /><br />
-                        <input type="password" name="password" placeholder="Enter Your Password" onBlur={handlePasswordChange} required /><br />
-                        <p className="text-danger">{passError}{error}</p><br />
+                        {isLogin && <div><input className="form-control" type="text" name="name" placeholder="Enter Your Name" onBlur={handleNameChange} required /><br /></div>}
+                        <input className="mb-2 form-control" type="email" name="email" placeholder="Enter Your Email" onBlur={handleEmailChange} required /><br />
+                        <input className="form-control" type="password" name="password" placeholder="Enter Your Password" onBlur={handlePasswordChange} required /><br />
+                        <p className="text-danger ">{passError}{error}</p><br />
 
-                        <button type="submit" >{!isLogin ? 'Login' : 'Register'}</button><br />
+                        <button className="btn btn-primary" type="submit" >{!isLogin ? 'Login' : 'Register'}</button><br />
                     </form>
                     <p className="text-success">Create a new account <input type="checkbox" onChange={toggoleLogin} /></p>
                     {/* <div>-------or--------</div> */}
-                    <hr className="w-50" />
-                    <button onClick={handleGoogleLogin}>Google Sign In</button>
+                    <hr className="w-70" />
+                    <button className="btn btn-primary" onClick={handleGoogleLogin}>Google Sign In</button>
                 </div>
-            </center>
+            </div>
+
 
         </div>
     );

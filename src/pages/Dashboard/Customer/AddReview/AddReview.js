@@ -10,7 +10,8 @@ const AddReview = () => {
         const reviewRating = rating.current.value;
         const userName = user.displayName;
         const newReview = { userName, reviewMessage, reviewRating };
-        fetch('http://localhost:5000/review', {
+        console.log(newReview);
+        fetch('https://vast-beach-35806.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,6 +27,7 @@ const AddReview = () => {
             })
         e.preventDefault();
     }
+    console.log(user.displayName);
     return (
         <div className="add-service my-3 d-flex justify-content-center align-items-center">
             <div className="w-75 border p-md-5 p-2">
@@ -35,7 +37,14 @@ const AddReview = () => {
                         <textarea type="text" className="form-control" ref={message} placeholder="Write Your Review" required />
                     </div>
                     <div className="mb-3">
-                        <input type="number" className="form-control" ref={rating} placeholder="Enter Your Rating (1-5) " />
+                        <select ref={rating} className="form-control">
+                            <option value="5">Select Rating</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
                     </div>
                     <div className="d-flex justify-content-start">
                         <button type="submit" className="btn btn-primary">Submit</button>

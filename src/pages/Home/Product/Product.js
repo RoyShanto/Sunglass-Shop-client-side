@@ -22,7 +22,7 @@ const Product = ({ product }) => {
                                         </div> */}
                         <div>
                             <Link to={`/dashboard/product/${_id}`}>
-                                <button className="btn btn-warning">Book Now</button>
+                                <button className="btn btn-warning fw-bold">Add A Purchase</button>
                             </Link>
                         </div>
                     </div>

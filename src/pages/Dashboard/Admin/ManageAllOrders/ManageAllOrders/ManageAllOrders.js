@@ -4,7 +4,7 @@ import './ManageAllOrders.css'
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://vast-beach-35806.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [])
@@ -13,7 +13,7 @@ const ManageAllOrders = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://vast-beach-35806.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -50,7 +50,7 @@ const ManageAllOrders = () => {
                                             <p className="bg-warning btn fw-bold">{order.status}</p>
                                         </div>
                                         <div className="col-md-4 pb-2">
-                                            <Link to={`/orders/update/${order._id}`}><button className="btn btn-warning">Update</button></Link>
+                                            <Link to={`/dashboard/orders/update/${order._id}`}><button className="btn btn-warning">Update</button></Link>
                                         </div>
                                         <div className="col-md-4">
                                             <button className="btn btn-warning" onClick={() => handleDeleteOrder(order._id)}>Cancel</button>

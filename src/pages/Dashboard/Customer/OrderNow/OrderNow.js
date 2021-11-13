@@ -10,13 +10,14 @@ const OrderNow = () => {
     const mobileRef = useRef();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://vast-beach-35806.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setService(data));
     }, [productId])
 
     const { _id, name, price, description, img } = service;
     const product_id = _id;
+    const userName = user.displayName;
     const email = user.email;
 
 
@@ -25,7 +26,7 @@ const OrderNow = () => {
         const address = addressRef.current.value || '';
         const mobileNo = mobileRef.current.value || '';
         const newOrder = { email, name, price, description, img, address, mobileNo, status, product_id };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://vast-beach-35806.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,11 +42,8 @@ const OrderNow = () => {
         e.preventDefault();
     }
 
-
-
-
     return (
-        <div className="container py-5 mt-5">
+        <div className="container py-5">
             <form onSubmit={handleOrder}>
                 <div className="row p-2 border border-danger" >
                     <div className="col-md-6">
@@ -56,9 +54,11 @@ const OrderNow = () => {
                             <h2 className="fw-bold">{name}</h2>
                             <h3>Price: {price}</h3>
                             <p>Description: {description}</p>
+                            <input type="text" className="mb-2" value={userName} disabled /><br />
+                            <input type="text" className="mb-2" value={email} disabled /><br />
                             <input type="text" className="mb-2" placeholder="Enter Your Address" ref={addressRef} required /><br />
                             <input type="number" placeholder="Enter Your Mobile Number" ref={mobileRef} required /><br /><br />
-                            <button type="submit" className="bg-warning py-2 px-5 border rounded fw-bold" >Book</button>
+                            <button type="submit" className="bg-warning py-2 px-5 border rounded fw-bold">Confirm</button>
                         </div>
                     </div>
                 </div>

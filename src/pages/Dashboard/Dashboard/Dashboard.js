@@ -18,12 +18,11 @@ import Approved from '../Admin/ManageAllOrders/Approved/Approved';
 const Dashboard = () => {
     return (
         <div className="row">
-            <div className="col-md-2 border-end">
+            <div className="col-md-2 border-end my-5">
                 <Sideber />
             </div>
-            <div className="col-md-10">
+            <div className="col-md-10 mt-3">
                 <Switch>
-
 
                     <Route exact path="/dashboard/addAdmin"> <AddAdmin /> </Route>
                     <Route exact path="/dashboard/addProduct"> <AddProduct /> </Route>

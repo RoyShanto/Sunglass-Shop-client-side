@@ -12,7 +12,7 @@ const AddProduct = () => {
         const img = imgRef.current.value;
         const newUser = { name, price, description, img };
         // console.log(newUser);
-        fetch('http://localhost:5000/product', {
+        fetch('https://vast-beach-35806.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const AddProduct = () => {
             {/* <div className="border border-3 border-info p-3 pb-4 w-50 add-service-border"> */}
             <div className="w-75 border p-md-5 p-2">
 
-                <h1>Add User</h1>
+                <h1>Add Product</h1>
                 <form onSubmit={AddUser}>
                     <div className="mb-3">
                         <input type="text" className="form-control" ref={nameRef} placeholder="Name" />

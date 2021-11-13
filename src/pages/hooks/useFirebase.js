@@ -35,29 +35,23 @@ const useFirebase = () => {
             });
     }
     const registerWithEmailPassword = (name, email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+                console.log(result.user);
+                setUserName(name);
+            })
+            .catch((error) => {
+                // console.log(error.message);
+            });
+    }
+    const setUserName = (name) => {
         updateProfile(auth.currentUser, { displayName: name })
             .then(() => {
-                // Profile updated!
+                // history.push('/login');
             }).catch((error) => {
 
             });
-        return createUserWithEmailAndPassword(auth, email, password)
-        // .then((result) => {
-        //     console.log(result.user);
-        //     setUserName(name);
-        // })
-        // .catch((error) => {
-        //     // console.log(error.message);
-        // });
     }
-    // const setUserName = (name) => {
-    //     updateProfile(auth.currentUser, { displayName: name })
-    //         .then(() => {
-    //             // Profile updated!
-    //         }).catch((error) => {
-
-    //         });
-    // }
     const loginWithEmailPassword = (email, password) => {
 
         return signInWithEmailAndPassword(auth, email, password)
@@ -80,6 +74,7 @@ const useFirebase = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
+                // console.log(user)
             }
         })
     }, [auth, history])

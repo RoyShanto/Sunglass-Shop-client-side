@@ -18,17 +18,17 @@ const AboutUs = () => {
                 <div className="col-md-4">
                     <i className="fas fa-truck fs-1 mb-3"></i>
                     <h4>FREE SHIPPING</h4>
-                    <p>Leather jacket mint parka Weekday grey clutch cotton oversized sweatshirt backpack capsule pastels indigo Lanvin headscarf oversized monochrome flats peach.</p>
+                    <p>We Have no extra charge to delivery your beautiful Sunglass to your home. We will be very happy to confirm your order. Please follow our website.</p>
                 </div>
                 <div className="col-md-4">
                     <i className="fas fa-hand-peace fs-1 mb-3"></i>
-                    <h4>FREE SHIPPING</h4>
-                    <p>Leather jacket mint parka Weekday grey clutch cotton oversized sweatshirt backpack capsule pastels indigo Lanvin headscarf oversized monochrome flats peach.</p>
+                    <h4>BEST PRODUCTS</h4>
+                    <p>We are happy to give the best quality product to our customer. Our all sunglass is very qualityful and famous brand. You can easily use these product.</p>
                 </div>
                 <div className="col-md-4">
                     <i className="fas fa-undo fs-1 mb-3"></i>
-                    <h4>FREE SHIPPING</h4>
-                    <p>Leather jacket mint parka Weekday grey clutch cotton oversized sweatshirt backpack capsule pastels indigo Lanvin headscarf oversized monochrome flats peach.</p>
+                    <h4>30 DAYS RETURN</h4>
+                    <p>We have a Special feature for our customer. Any customer can return our product if he/she want to change this product. Our customer is satisfied.</p>
                 </div>
 
             </div>

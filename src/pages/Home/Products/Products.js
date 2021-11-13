@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 
 const Products = (props) => {
-    console.log(props.fromHome);
+    // console.log(props.fromHome);
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://vast-beach-35806.herokuapp.com/product')
             .then(req => req.json())
             .then(data => setProducts(data))
     }, [])
@@ -21,7 +21,7 @@ const Products = (props) => {
 
     return (
         <div className="row">
-            <h1>Total Products: {products.length}</h1>
+            <h1>Our Products</h1>
             {props.fromHome ?
                 data.map(p => <Product key={p._id} product={p}></Product>)
                 :

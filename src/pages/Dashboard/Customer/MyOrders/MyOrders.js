@@ -5,7 +5,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://vast-beach-35806.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [])
@@ -14,7 +14,7 @@ const MyOrders = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://vast-beach-35806.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

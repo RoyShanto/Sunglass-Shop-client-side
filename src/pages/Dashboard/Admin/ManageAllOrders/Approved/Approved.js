@@ -5,16 +5,16 @@ const Approved = () => {
     const [order, setOrder] = useState({});
     const { orderId } = useParams();
     useEffect(() => {
-        const url = `http://localhost:5000/orders/${orderId}`;
+        const url = `https://vast-beach-35806.herokuapp.com/orders/${orderId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data));
     }, [orderId])
-    order.status = 'Shifted';
+    order.status = 'Shipped';
     console.log(order);
 
     const handleUpdateOrder = e => {
-        const url = `http://localhost:5000/orders/${orderId}`;
+        const url = `https://vast-beach-35806.herokuapp.com/orders/${orderId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
